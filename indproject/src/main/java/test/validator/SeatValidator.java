@@ -1,4 +1,15 @@
 package test.validator;
 
-public class SeatValidator {
+import test.Models.Booking;
+
+public class SeatValidator extends BaseValidator {
+
+    public SeatValidator(){
+        super();
+    }
+
+    @Override
+    public void isValid(Booking booking){
+        System.out.println("card valid");
+    }
 }
