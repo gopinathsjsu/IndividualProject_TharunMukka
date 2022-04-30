@@ -21,4 +21,20 @@ public class OutputStorage {
         }
         return outputStorageInstance;
     }
+
+    public void addError(String errorString){
+        errorOutput.add(errorString);
+    }
+
+    public void addTicket(Ticket ticket) {
+        tickets.add(ticket);
+    }
+
+    public List<String> getErrorOutput(){
+        return errorOutput;
+    }
+
+    public List<Ticket> getTickets(){
+        return tickets;
+    }
 }

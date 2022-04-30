@@ -1,6 +1,11 @@
 package test.validator;
 
 import test.Models.Booking;
+import test.Models.Flight;
+import test.storage.FlightStorage;
+import test.storage.OutputStorage;
+
+import java.util.Map;
 
 public class FlightValidator extends BaseValidator{
     public FlightValidator(){
@@ -9,6 +14,19 @@ public class FlightValidator extends BaseValidator{
 
     @Override
     public void isValid(Booking booking){
-        System.out.println("card valid");
+        OutputStorage outputStorage = OutputStorage.getOutputStorageInstance();
+        FlightStorage flightStorage = FlightStorage.getFlightStorageInstance();
+        Map<String, Flight> flightMap = flightStorage.getFlightData();
+
+
+        if(flightMap.containsKey(booking.getFlightNumber())){
+            // if flight exists, call seat validation step
+            this.nextValidator.isValid(booking);
+        }
+        else {
+            // write to output error storage
+            outputStorage.addError("Please enter correct booking details for " + booking.getBookingName() +
+                    ": Invalid Flight Number");
+        }
     }
 }
