@@ -20,7 +20,7 @@ public class FlightStorageBuilder {
         String line="";
         Boolean header = false;
         BufferedReader br = new BufferedReader(new FileReader(filePath));
-        FlightStorage flightStorage = FlightStorage.getFlightStorageInstance();
+        Builder flightStorage = FlightStorage.getFlightStorageInstance();
         Map<String, Flight> flights = flightStorage.getFlightData();
         while((line= br.readLine()) != null) {
             if(!header){
@@ -63,13 +63,5 @@ public class FlightStorageBuilder {
 //                flightStorage.add(new Flight(flightNumber, category,seats, price, arrival, departure));
             }
         }
-        printFlightData(flightStorage.getFlightData());
-    }
-
-    public void printFlightData(Map<String,Flight> map){
-        for (String key : map.keySet()) {
-            System.out.println(map.get(key));
-        }
-
     }
 }

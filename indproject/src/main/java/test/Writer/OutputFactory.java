@@ -9,7 +9,6 @@ public class OutputFactory {
         else if (outputType.equals("Error")){
             writer = new ErrorWriter();
         }
-
         return writer;
     }
 }

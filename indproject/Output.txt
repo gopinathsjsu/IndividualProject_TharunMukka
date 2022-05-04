@@ -1,3 +1,1 @@
-Please enter correct booking details for Richard: Invalid Card Details
-Please enter correct booking details for Anna: Not enough seats in selected category
 Please enter correct booking details for John: Invalid Flight Number

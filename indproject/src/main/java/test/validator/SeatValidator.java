@@ -26,6 +26,7 @@ public class SeatValidator extends BaseValidator {
         Boolean c = categoryAvailabilities.get(0).getSeats() >= booking.getSeats();
         if(categoryAvailabilities.get(0).getSeats() >= booking.getSeats()){
             // if required seats are available, call Card Validator
+            System.out.println("Total Price for " + booking.getBookingName() + " is :"+categoryAvailabilities.get(0).getPrice() * booking.getSeats());
             this.nextValidator.isValid(booking);
         }
         else {

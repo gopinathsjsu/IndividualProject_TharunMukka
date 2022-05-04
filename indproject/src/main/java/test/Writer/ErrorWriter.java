@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ErrorWriter implements Writer{
-    public void outputWriter(String path) throws FileNotFoundException {
+    public String outputWriter(String path) throws FileNotFoundException {
         PrintWriter pw = new PrintWriter(new File(path));
         OutputStorage outputStorage = OutputStorage.getOutputStorageInstance();
 
@@ -22,5 +22,6 @@ public class ErrorWriter implements Writer{
         pw.write(builder.toString());
         pw.close();
         System.out.println("error output file writing done!");
+        return "Successfully written Errors";
     }
 }

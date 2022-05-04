@@ -5,7 +5,7 @@ import test.Models.Flight;
 import java.util.HashMap;
 import java.util.Map;
 
-public class FlightStorage {
+public class FlightStorage implements Builder{
     private Map<String, Flight> flightData;
     private static FlightStorage flightStorageInstance;
 
@@ -20,7 +20,7 @@ public class FlightStorage {
         return flightStorageInstance;
     }
 
-    public boolean add(Flight flight){
+    public Boolean add(Flight flight){
         flightData.put(flight.getFlightNumber(), flight);
         return true;
     }

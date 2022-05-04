@@ -10,7 +10,7 @@ import java.io.PrintWriter;
 import java.util.List;
 
 public class TicketWriter implements Writer{
-    public void outputWriter(String path) throws FileNotFoundException {
+    public String outputWriter(String path) throws FileNotFoundException {
         PrintWriter pw = new PrintWriter(new File(path));
         OutputStorage outputStorage = OutputStorage.getOutputStorageInstance();
 
@@ -24,5 +24,6 @@ public class TicketWriter implements Writer{
         pw.write(builder.toString());
         pw.close();
         System.out.println("ticket csv file writing done!");
+        return "Successfully written Tickets";
     }
 }

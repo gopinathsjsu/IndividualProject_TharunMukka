@@ -33,7 +33,6 @@ public class OrderService {
             flightStorage.add(flight);
             outputStorage.addTicket(new Ticket(booking.getBookingName(), booking.getFlightNumber(), booking.getCategory(),
                     booking.getSeats(), check.get().getPrice() * booking.getSeats()));
-            System.out.println(booking.toString());
         }
         catch (Exception ex){
             System.out.println(ex);
