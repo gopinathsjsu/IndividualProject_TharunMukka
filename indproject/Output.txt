@@ -1,1 +1,3 @@
+Please enter correct booking details for Anna: Not enough seats in selected category
 Please enter correct booking details for John: Invalid Flight Number
+Please enter correct booking details for Sierra: Invalid Card Details

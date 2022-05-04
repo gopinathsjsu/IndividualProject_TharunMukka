@@ -59,10 +59,6 @@ public class CardValidator extends BaseValidator {
             setCardObject(new AmexCard());
             return cardObject.validCard(cardNumber);
         }
-        else if(length < 20){
-            // Any card greater than 19 or not satisfying above conditions is considered invalid.
-            return true;
-        }
         return false;
     }
 
