@@ -35,7 +35,7 @@ public class FlightValidatorTest {
     }
 
     @Test
-    public void when_xx_then_success_isValid() throws Exception {
+    public void validFlight() throws Exception {
         String flightNumber = "SJ456";
         Boolean valid = flightValidatorSUT.isFlightValid(flightNumber);
 

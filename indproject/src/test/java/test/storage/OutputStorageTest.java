@@ -35,20 +35,13 @@ public class OutputStorageTest {
 
     @Test
     public void errorOutputTest() throws Exception {
-        //1.Arrange
-        //1.1 方法入参准备
         String errorString = "errorString";
-
-        //1.2 外部依赖mock
 
         boolean addReturnValue = false;
         when(errorOutputMock.add("errorString")).thenReturn(addReturnValue);
-
-
-        //2.Act
         outputStorageSUT.addError(errorString);
 
-        //3.Assert
+        assertEquals(false, addReturnValue);
     }
 
     @Test
@@ -61,6 +54,7 @@ public class OutputStorageTest {
         outputStorageSUT.addTicket(ticket);
 
         //3.Assert
+        assertEquals(false, addReturnValue1);
     }
 }
 
